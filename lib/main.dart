@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_painter_bar_diagram/bar_diagram_painter.dart';
 
 const APP_TITLE = "BAR DIAGRAM";
 void main() {
@@ -29,10 +30,13 @@ class GraphViewScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text(APP_TITLE),),
-      body: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-        height: 600,
-        width: 600,
+      body: CustomPaint(
+        painter: BarDiagramPainter(),
+        child: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
+          height: 400,
+          width: 400,
+        ),
       ),
     );
   }
