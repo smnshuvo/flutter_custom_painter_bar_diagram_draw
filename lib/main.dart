@@ -30,12 +30,15 @@ class GraphViewScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text(APP_TITLE),),
-      body: CustomPaint(
-        painter: BarDiagramPainter(),
-        child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
-          height: 400,
-          width: 400,
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: CustomPaint(
+          painter: BarDiagramPainter(),
+          child: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
+            height: 400,
+            width: MediaQuery.of(context).size.width,
+          ),
         ),
       ),
     );
