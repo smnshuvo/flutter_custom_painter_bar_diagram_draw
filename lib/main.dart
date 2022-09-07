@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+const APP_TITLE = "BAR DIAGRAM";
 void main() {
   runApp(const MyApp());
 }
@@ -7,11 +8,11 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  static const APP_TITLE = "BAR DIAGRAM";
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: APP_TITLE,
       theme: ThemeData(
         primarySwatch: Colors.red,
@@ -26,10 +27,13 @@ class GraphViewScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-      height: 600,
-      width: 600,
+    return Scaffold(
+      appBar: AppBar(title: const Text(APP_TITLE),),
+      body: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+        height: 600,
+        width: 600,
+      ),
     );
   }
 }
